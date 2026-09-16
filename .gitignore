@@ -1,0 +1,36 @@
+# --- Системні файли ОС ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Файли збірків, логи та тимчасові файли ---
+*.log
+*.tmp
+*.bak
+*.swp
+*.cache
+build/
+dist/
+bin/
+obj/
+
+# --- Залежності та пакети ---
+node_modules/
+bower_components/
+vendor/
+.venv/
+env/
+
+# --- Налаштування IDE та редакторів ---
+.vscode/
+.idea/
+*.suo
+*.user
+*.userprefs
+*.sln.docstates
+
+# --- Секретні дані та файли оточення ---
+.env
+.env.local
+*.pem
+*.key
