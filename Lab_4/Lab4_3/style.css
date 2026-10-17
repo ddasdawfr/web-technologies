@@ -1,0 +1,27 @@
+li {
+	color: rgb(128, 0, 255);
+}
+
+#green {
+	color: rgb(0, 128, 0);
+}
+
+ul ul.square-list li {
+	list-style-type: square;
+}
+
+.custom-icon-list {
+	list-style-image: url('image.png');
+}
+
+ul ul li {
+	list-style-type: none;
+}
+
+.last-list a {
+	text-decoration: none;
+}
+
+ol {
+	list-style-position: inside;
+}

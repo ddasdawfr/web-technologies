@@ -1,0 +1,46 @@
+* {
+    	text-align: center;
+}
+
+#pancake-header {
+	color: rgb(255, 0, 0);
+	font-size: 32px;
+	font-weight: bold;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.italic {
+	font-style: italic;
+}
+
+.underline {
+	text-decoration: underline;
+}
+
+.subscript {
+	vertical-align: sub;
+	font-size: 0.75em;
+}
+
+.superscript {
+	vertical-align: super;
+	font-size: 0.75em;
+}
+
+.line-through {
+	text-decoration: line-through;
+}
+
+.background-color {
+	background-color: yellow;
+}
+
+.green-line {
+	border: 1px;
+	height: 4px;
+	background-color: green;
+	margin: 20px 300px;
+}

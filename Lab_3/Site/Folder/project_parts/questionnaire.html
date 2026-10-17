@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Web technologies practice: basic HTML tags</title>
+</head>
+<body>
+	<header>
+	<a href="C:\Users\hfpop\OneDrive\Desktop\Веб-технології\Lab_3\Site\Index.html">Повернутися на головну</a>
+	</header>
+
+	<main>
+	<div style="width: 80%; max-width: 900px; margin: 0 auto;">
+	<fieldset>
+  	<legend>Особисті дані</legend>
+
+	<div style="margin-bottom: 15px;">
+	<label for="username">Ім'я користувача:</label>
+	<input type="text" id="username" name="username" value="VLAD" placeholder="Введіть ваше ім'я" tabindex="4">
+	</div>
+
+	<div style="margin-bottom: 15px;">
+	<div style="margin-bottom: 5px;">
+		<label for="comments">Коментар:</label>
+	</div>
+	<div style="margin-bottom: 5px;">
+		<textarea id="comments" name="comments" rows="4" cols="50" placeholder="Ваш відгук..."></textarea>
+	</div>
+	</div>
+
+	<div style="margin-bottom: 15px;">
+	<label for="pass">Пароль:</label>
+	<input type="password" id="pass" name="password" value="123456789" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6}" placeholder="Пароль (6 символів)" tabindex="1"> 
+	</div>
+
+	<div style="margin-bottom: 15px;">
+	<label for="user-email">Електронна пошта:</label>
+	<input type="email" id="user-email" name="email" value="gmail@" placeholder="example@mail.com" required autocomplete="off" pattern="[-a-zA-Z0-9._%+] +@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}" tabindex="5">
+	</div>
+	
+	<div style="margin-bottom: 15px;">
+	<label for="phone">Номер телефону:</label>
+	<input type="tel" id="phone" name="phone" value="+380" placeholder="+38 0XX XXX XX XX" required tabindex="3">
+	</div>
+	
+	<div style="margin-bottom: 15px;">
+	<label for="birthdate">Дата народження:</label>
+	<input type="date" id="birthdate" name="birthdate" value="1900" required tabindex="2">
+	</div>
+	</fieldset>
+
+	<fieldset>
+  	<legend>Радіо кнопки</legend>
+
+	<div style="margin-bottom: 15px;">
+	<p>Оберіть курс:</p>
+	<input type="radio" id="course1" name="course" value="1">
+	<label for="course1">1 курс</label>
+
+	<input type="radio" id="course2" name="course" value="2">
+	<label for="course2">2 курс</label>
+
+	<input type="radio" id="course3" name="course" value="3">
+	<label for="course3">3 курс</label>
+
+	<p>Форма навчання:</p>
+	<input type="radio" id="day" name="study_form" value="day" checked>
+	<label for="day">Денна</label>
+
+	<input type="radio" id="extramural" name="study_form" value="extramural">
+	<label for="extramural">Заочна</label>
+
+	<input type="radio" id="distance" name="study_form" value="distance">
+	<label for="distance">Дистанційна</label>
+	</div>
+	</fieldset>
+
+	<fieldset>
+  	<legend>checkbox</legend>
+	<div style="margin-bottom: 15px;">
+	<p>Які мови програмування ви знаєте?</p>
+	<input type="checkbox" id="lang1" name="skills" value="cpp">
+	<label for="lang1">C++</label>
+
+	<input type="checkbox" id="lang2" name="skills" value="python">
+	<label for="lang2">Python</label>
+
+	<input type="checkbox" id="lang3" name="skills" value="csharp">
+	<label for="lang3">C#</label>
+
+	<input type="checkbox" id="lang4" name="skills" value="java">
+	<label for="lang4">Java</label>
+	</div>
+	</fieldset>
+	
+	<fieldset>
+  	<legend>Випадаючі списки</legend>
+	<div style="margin-bottom: 15px;">
+	<label for="city">Оберіть місто:</label>
+	<select id="city" name="city">
+  		<option value="kyiv">Київ</option>
+  		<option value="lviv">Львів</option>
+  		<option value="chernivtsi" selected>Чернівці</option> <!-- Третій елемент за замовчуванням -->
+  		<option value="odesa">Одеса</option>
+  		<option value="kharkiv">Харків</option>
+	</select>
+	</div>
+	
+	<div style="margin-bottom: 15px;">
+	<label for="hobbies">Оберіть ваші хобі (6 варіантів):</label>
+	<div style="margin-bottom: 15px;">
+	<select id="hobbies" name="hobbies" multiple="6">
+  		<option value="reading">Читання</option>
+  		<option value="gaming">Відеоігри</option>
+  		<option value="sports">Спорт</option>
+  		<option value="music">Музика</option>
+  		<option value="travel">Подорожі</option>
+ 		<option value="coding">Програмування</option>
+	</select>
+	</div>
+	
+	<div style="margin-bottom: 15px;">
+	<label for="faculties">Оберіть спеціальність:</label>
+	<select id="faculties" name="specialty">
+  	<optgroup label="IT">
+    		<option value="se">Інженерія ПЗ</option>
+    		<option value="cs">Комп'ютерні науки</option>
+   		<option value="cyber">Кібербезпека</option>
+ 	</optgroup>
+  	<optgroup label="Інженерія">
+    		<option value="robotics">Робототехніка</option>
+    		<option value="electronics">Електроніка</option>
+    		<option value="auto">Автоматизація</option>
+  	</optgroup>
+  	<optgroup label="Економіка">
+    		<option value="fin">Фінанси</option>
+   		<option value="mkt">Маркетинг</option>
+    		<option value="mgmt">Менеджмент</option>
+  	</optgroup>
+  	<optgroup label="Мови">
+   		<option value="eng">Англійська</option>
+    		<option value="deu">Німецька</option>
+    		<option value="fra">Французька</option>
+  	</optgroup>
+	</select>
+	</div>
+
+	<div style="margin-bottom: 15px;">
+	<label for="browser">Оберіть або введіть свій браузер:</label>
+	<input list="browsers" id="browser" name="browser">
+	<datalist id="browsers">
+  		<option value="Chrome">
+  		<option value="Firefox">
+  		<option value="Edge">
+  		<option value="Safari">
+  		<option value="Opera">
+	</datalist>
+	</div>
+	</fieldset>
+
+	<fieldset>
+  	<legend>Файли, ссилки і тд</legend>
+
+	<div style="margin-bottom: 15px;">
+	<input type="submit" value="Надіслати">
+	<input type="reset" value="Очистити форму">
+	</div>
+	
+	<div style="margin-bottom: 15px;">
+	<label for="audio-upload">Завантажте аудіофайли:</label>
+	<input type="file" id="audio-upload" name="audio_files" accept="audio/*" multiple>
+	</div>	
+
+	<div style="margin-bottom: 15px;">
+	<form action="" method="get">
+ 	<input type="text" name="search_query" value="C++ tutorial">
+  	<button type="submit">Шукати (GET)</button>
+	</form>
+	</div>
+	</fieldset>
+	</div>
+	
+	</main>
+
+	<footer></footer>
+</body>
+</html>

@@ -1,0 +1,42 @@
+* {
+    	font-family: Arial;
+	font-size: 20px;
+	line-height: 40px;
+}
+
+p {
+	color: rgb(0, 200, 0);
+	text-align: center;
+}
+
+div, section, article, header, footer, main, aside, blockquote {
+	text-align: justify;
+}
+
+.feature {
+	color: rgb(255, 0, 0);
+}
+
+.single-line {
+	white-space: nowrap;
+}
+
+#second-paragraph {
+	font-style: italic;
+	font-weight: bold;
+}
+
+.text-shadow-effect {
+    text-shadow: 5px -5px 3px rgba(67, 0, 228, 0.4);
+}
+
+.block-style-1 {
+	text-decoration: line-through;
+	text-transform: uppercase;
+	text-indent: 50px;
+}
+
+.block-style-2 {
+	letter-spacing: 30px;
+	word-spacing: 50px;
+}
