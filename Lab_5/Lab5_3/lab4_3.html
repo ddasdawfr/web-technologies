@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Lab4_3</title>
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header></header>
+
+	<main>
+	<div class="form-container">
+		<h1 class="form-title">Анкета користувача</h1>
+
+		<fieldset>
+		<legend>Особисті дані</legend>
+
+		<div class="form-group">
+		<label for="username">Ім'я користувача:</label>
+		<input type="text" id="username" name="username" value="VLAD" placeholder="Введіть ваше ім'я" tabindex="4">
+		</div>
+
+		<div class="form-group">
+		<label for="comments">Коментар:</label>
+		<textarea id="comments" name="comments" rows="4" placeholder="Ваш відгук..."></textarea>
+		</div>
+
+		<div class="form-group">
+		<label for="pass">Пароль:</label>
+		<input type="password" id="pass" name="password" value="123456789" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6}" placeholder="Пароль (6 символів)" tabindex="1"> 
+		</div>
+
+		<div class="form-group">
+		<label for="user-email">Електронна пошта:</label>
+		<input type="email" id="user-email" name="email" value="gmail@" placeholder="example@mail.com" required autocomplete="off" tabindex="5">
+		</div>
+		
+		<div class="form-group">
+		<label for="phone">Номер телефону:</label>
+		<input type="tel" id="phone" name="phone" value="+380" placeholder="+38 0XX XXX XX XX" required tabindex="3">
+		</div>
+		
+		<div class="form-group">
+		<label for="birthdate">Дата народження:</label>
+		<input type="date" id="birthdate" name="birthdate" required tabindex="2">
+		</div>
+		</fieldset>
+
+		<fieldset>
+		<legend>Радіо кнопки</legend>
+
+		<div class="form-group">
+			<p class="group-title">Оберіть курс:</p>
+			<label class="radio-checkbox-label">
+			<input type="radio" id="course1" name="course" value="1"> 1 курс
+			</label>
+			<label class="radio-checkbox-label">
+			<input type="radio" id="course2" name="course" value="2"> 2 курс
+			</label>
+			<label class="radio-checkbox-label">
+			<input type="radio" id="course3" name="course" value="3"> 3 курс
+			</label>
+
+			<p class="group-title">Форма навчання:</p>
+			<label class="radio-checkbox-label">
+			<input type="radio" id="day" name="study_form" value="day" checked> Денна
+			</label>
+			<label class="radio-checkbox-label">
+			<input type="radio" id="extramural" name="study_form" value="extramural"> Заочна
+			</label>
+			<label class="radio-checkbox-label">
+			<input type="radio" id="distance" name="study_form" value="distance"> Дистанційна
+			</label>
+		</div>
+		</fieldset>
+
+		<fieldset>
+		<legend>Checkbox</legend>
+		<div class="form-group">
+			<p class="group-title">Які мови програмування ви знаєте?</p>
+			<label class="radio-checkbox-label">
+			<input type="checkbox" id="lang1" name="skills" value="cpp"> C++
+			</label>
+			<label class="radio-checkbox-label">
+			<input type="checkbox" id="lang2" name="skills" value="python"> Python
+			</label>
+			<label class="radio-checkbox-label">
+			<input type="checkbox" id="lang3" name="skills" value="csharp"> C#
+			</label>
+			<label class="radio-checkbox-label">
+			<input type="checkbox" id="lang4" name="skills" value="java"> Java
+			</label>
+		</div>
+		</fieldset>
+		
+		<fieldset>
+		<legend>Випадаючі списки</legend>
+		
+		<div class="form-group">
+			<label for="city">Оберіть місто:</label>
+			<select id="city" name="city">
+			<option value="kyiv">Київ</option>
+			<option value="lviv">Львів</option>
+			<option value="chernivtsi" selected>Чернівці</option>
+			<option value="odesa">Одеса</option>
+			<option value="kharkiv">Харків</option>
+			</select>
+		</div>
+		
+		<div class="form-group">
+			<label for="hobbies">Оберіть ваші хобі:</label>
+			<select id="hobbies" name="hobbies" multiple size="5">
+			<option value="reading">Читання</option>
+			<option value="gaming">Відеоігри</option>
+			<option value="sports">Спорт</option>
+			<option value="music">Музика</option>
+			<option value="travel">Подорожі</option>
+			<option value="coding">Програмування</option>
+			</select>
+		</div>
+		
+		<div class="form-group">
+			<label for="faculties">Оберіть спеціальність:</label>
+			<select id="faculties" name="specialty">
+			<optgroup label="IT">
+				<option value="se">Інженерія ПЗ</option>
+				<option value="cs">Комп'ютерні науки</option>
+				<option value="cyber">Кібербезпека</option>
+			</optgroup>
+			<optgroup label="Інженерія">
+				<option value="robotics">Робототехніка</option>
+				<option value="electronics">Електроніка</option>
+				<option value="auto">Автоматизація</option>
+			</optgroup>
+			<optgroup label="Економіка">
+				<option value="fin">Фінанси</option>
+				<option value="mkt">Маркетинг</option>
+				<option value="mgmt">Менеджмент</option>
+			</optgroup>
+			<optgroup label="Мови">
+				<option value="eng">Англійська</option>
+				<option value="deu">Німецька</option>
+				<option value="fra">Французька</option>
+			</optgroup>
+			</select>
+		</div>
+
+		<div class="form-group">
+			<label for="browser">Оберіть або введіть свій браузер:</label>
+			<input list="browsers" id="browser" name="browser" placeholder="Оберіть браузер...">
+			<datalist id="browsers">
+			<option value="Chrome">
+			<option value="Firefox">
+			<option value="Edge">
+			<option value="Safari">
+			<option value="Opera">
+			</datalist>
+		</div>
+		</fieldset>
+
+		<fieldset>
+		<legend>Файли та відправка</legend>
+
+		<div class="form-group">
+			<label for="audio-upload">Завантажте аудіофайли:</label>
+			<input type="file" id="audio-upload" name="audio_files" accept="audio/*" multiple>
+		</div>  
+
+		<div class="form-group">
+			<p class="group-title">Пошук:</p>
+			<form action="" method="get" class="search-form">
+			<input type="text" name="search_query" value="C++ tutorial" placeholder="Запит для пошуку...">
+			<button type="submit" class="be be-search">Шукати (GET)</button>
+			</form>
+		</div>
+
+		<div class="button-group">
+			<input type="submit" class="be be-submit" value="Надіслати">
+			<input type="reset" class="be be-reset" value="Очистити форму">
+		</div>
+		</fieldset>
+	</div>
+	</main>
+
+	<footer></footer>
+</body>
+</html>

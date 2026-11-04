@@ -1,0 +1,259 @@
+/* ==========================================================================
+   1. Скидання стилів (Reset) та CSS Variables
+   ========================================================================== */
+
+:root {
+  /* Колірна палітра */
+  --bg-page-from: #2c3e50;
+  --bg-page-to: #4ca1af;
+  --card-bg: #ffffff;
+  --accent-blue: #3498db;
+  --text-dark: #2c3e50;
+  --text-muted: #7f8c8d;
+  --text-light: #bdc3c7;
+  --border-color: #000000;
+  --badge-bg: #eef2f5;
+  --item-hover: #f8f9fa;
+
+  /* Типографіка та відступи */
+  --font-main: 'Inter', sans-serif;
+  --radius-card: 16px;
+  --radius-sm: 8px;
+  --gap-xs: 6px;
+  --gap-sm: 12px;
+  --gap-md: 20px;
+  --gap-lg: 28px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-main);
+  background: linear-gradient(135deg, var(--bg-page-from), var(--bg-page-to));
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: var(--gap-md);
+}
+
+/* Flexbox допоміжні класи */
+.flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ==========================================================================
+   2. Головний контейнер додатку
+   ========================================================================== */
+
+.weather-card {
+  width: 100%;
+  max-width: 480px;
+  background-color: var(--card-bg);
+  border-radius: var(--radius-card);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   3. Блок поточної погоди (Header)
+   ========================================================================== */
+
+.current-weather {
+  padding: var(--gap-lg);
+  background-color: #ffffff;
+  gap: var(--gap-md);
+}
+
+.location-info .city {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.location-info .date {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.location-info .condition {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.weather-main {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.temperature {
+  align-items: flex-start;
+}
+
+.temp-value {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.temp-unit {
+  font-size: 1.5rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.weather-icon {
+  color: var(--accent-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Деталі поточної погоди */
+.weather-details {
+  gap: var(--gap-sm) var(--gap-md);
+  padding-top: var(--gap-md);
+  list-style: none;
+}
+
+.detail-item {
+  flex: 1 1 40%;
+  font-size: 0.875rem;
+  display: flex;
+  gap: var(--gap-xs);
+}
+
+.detail-label {
+  color: var(--text-muted);
+}
+
+.detail-value {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   4. Прогноз погоди на кожен день (Forecast)
+   ========================================================================== */
+
+.forecast-section {
+  padding: var(--gap-sm) var(--gap-lg) var(--gap-lg);
+  background-color: var(--card-bg);
+}
+
+.forecast-list {
+  gap: 4px;
+}
+
+.forecast-line {
+  border: none;
+  height: 1px;
+  background-color: var(--border-color);
+  width: 100%;
+  margin: 0;
+}
+
+.forecast-item {
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  transition: background-color 0.2s ease;
+}
+
+.forecast-item:hover {
+  background-color: var(--item-hover);
+}
+
+.day-info {
+  align-items: center;
+  gap: var(--gap-sm);
+  flex: 1;
+}
+
+.day-name {
+  font-weight: 600;
+  width: 110px;
+  font-size: 0.95rem;
+}
+
+.icon-small {
+  color: var(--text-muted);
+}
+
+.forecast-data {
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+.temp-range {
+  gap: var(--gap-sm);
+  font-size: 0.95rem;
+  min-width: 70px;
+  justify-content: flex-end;
+}
+
+.temp-high {
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.temp-low {
+  font-weight: 500;
+  color: var(--text-light);
+}
+
+.pollen-badge {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  padding: 4px 10px;
+  white-space: nowrap;
+}
+
+/* ==========================================================================
+   5. Адаптивність (Media Queries)
+   ========================================================================== */
+
+@media (max-width: 480px) {
+  body {
+    padding: 0;
+  }
+
+  .weather-card {
+    border-radius: 0;
+    min-height: 100vh;
+  }
+
+  .current-weather,
+  .forecast-section {
+    padding: var(--gap-md);
+  }
+
+  .detail-item {
+    flex: 1 1 100%;
+  }
+
+  .day-name {
+    width: auto;
+  }
+
+  .forecast-data {
+    gap: var(--gap-sm);
+  }
+}

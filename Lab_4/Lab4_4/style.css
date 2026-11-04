@@ -42,7 +42,7 @@ div > p.text-background {
 img + p {
 	background-color: brown;
 }
-
+..
 section ~ p {
 	color: red;
 }

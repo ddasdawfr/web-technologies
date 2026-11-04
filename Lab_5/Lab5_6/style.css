@@ -1,0 +1,145 @@
+/* =========================================================
+   1. ФОН СТОРІНКИ (body)
+   ========================================================= */
+body {
+	background-color: rgb(32, 32, 90);
+	background-image: url('пупупу.jpg');
+	background-repeat: no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-attachment: fixed;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	margin: 0;
+	padding: 20px 0;
+}
+
+/* =========================================================
+   2. КОНТЕЙНЕР (main)
+   ========================================================= */
+.container {
+	box-sizing: border-box;
+	max-width: 900px;
+	min-width: 320px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: rgba(255, 255, 255, 0.85);
+	border-radius: 8px;
+}
+
+/* 
+   Пояснення для min-width: 320px
+   Коли вікно браузера стає вужчим за 320px, ширина контейнера перестає 
+   зменшуватися і залишається фіксованою на рівні 320px. 
+   Через це контейнер перестає стискатися під розмір екрана, і в браузері 
+   з'являється горизонтальна смуга прокрутки (scroll) для перегляду вмісту.
+*/
+
+.section-block {
+	margin-bottom: 30px;
+}
+
+/* =========================================================
+   3. БЛОК «ТЕГИ» (display)
+   ========================================================= */
+.tags-div-group {
+	margin-bottom: 15px;
+}
+
+.tag-inline-div {
+	display: inline;
+	width: 200px;  /* Ці параметри не працюють */
+	height: 100px; /* Ці параметри не працюють */
+	background-color: rgb(220, 200, 240);
+	padding: 5px 10px;
+	margin-right: 5px;
+}
+
+/* 
+	ПОЯСНЕННЯ ДЛЯ DIV (display: inline):
+	Властивості width та height не діють на рядкові елементи (display: inline). 
+	Рядкові елементи займають лише стільки місця, скільки потрібно для їхнього контенту, 
+	і розміри ширини/висоти для них браузером ігноруються.
+*/
+
+.tag-block-span {
+	display: block;
+	width: 150px;
+	background-color: rgb(180, 140, 210);
+	color: white;
+	padding: 5px 10px;
+	margin-bottom: 5px;
+}
+
+/* =========================================================
+   4. БЛОК «ПОВТОРЕННЯ ФОНУ» (background-repeat)
+   ========================================================= */
+.repeat-box {
+	height: 200px;
+	background-image: url('моршу.png');
+	background-color: rgb(240, 235, 250);
+	border: 1px solid rgb(150, 100, 200);
+	margin-bottom: 15px;
+	padding: 10px;
+	font-weight: bold;
+}
+
+.repeat-x { background-repeat: repeat-x; }
+.repeat-y { background-repeat: repeat-y; }
+.repeat-space { background-repeat: space; }
+.repeat-round { background-repeat: round; }
+
+/* 
+	Різниця між space та round
+	1. space: фонове зображення повторюється максимально можливу кількість разів 
+		без обрізання, а залишок вільного простору рівномірно розподіляється 
+		у вигляді порожніх відступів між картинками.
+	2. round: зображення масштабуються (розтягуються або стискаються) так, 
+		щоб заповнити весь блок повністю цілою кількістю картинок без зазорів.
+*/
+
+/* =========================================================
+   5. БЛОК «МАШТАБУВАННЯ» (background-size)
+   ========================================================= */
+.size-box {
+	width: 300px;
+	height: 200px;
+	border: 2px solid rgb(106, 27, 154);
+	background-image: url('sky.png'); /* Ваша фонова картинка */
+	background-position: center;
+	background-repeat: no-repeat;
+	display: inline-block;
+	margin-right: 15px;
+	margin-bottom: 15px;
+	padding: 10px;
+	box-sizing: border-box;
+	font-weight: bold;
+	color: white;
+	text-shadow: 1px 1px 2px black;
+}
+
+.size-contain { background-size: contain; }
+.size-cover { background-size: cover; }
+
+/* =========================================================
+   6. БЛОК «ПРОКРУЧУВАННЯ ФОНУ» (background-attachment)
+   ========================================================= */
+.attachment-box {
+	color: white;
+	max-height: 150px;
+	overflow: auto;
+	background-image: url('ГЫЧА.jpg'); /* Фоновий візерунок/картинка */
+	border: 1px solid rgb(120, 120, 120);
+	margin-bottom: 15px;
+	padding: 15px;
+}
+
+.attach-scroll { background-attachment: scroll; }
+.attach-local { background-attachment: local; }
+
+/* 
+   ПОЯСНЕННЯ ДЛЯ BACKGROUND-ATTACHMENT:
+   - scroll: фонове зображення прикріплене до самого блоку і залишається нерухомим, 
+	 коли ви прокручуєте текст всередині цього блоку.
+   - local: фонове зображення прикріплене до вмісту блоку і прокручується 
+	 разом із текстом.
+*/

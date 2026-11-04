@@ -1,0 +1,124 @@
+.form-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    padding: 30px;
+    border-radius: 12px;
+}
+
+.form-title {
+    text-align: center;
+    color: rgb(75, 45, 140);
+    margin-top: 0;
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+fieldset {
+    border: 2px solid rgb(220, 210, 240);
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 25px;
+    background-color: rgb(252, 250, 255);
+}
+
+legend {
+    font-weight: bold;
+    color: rgb(110, 65, 180);
+    padding: 4px 12px;
+    background-color: rgb(240, 230, 255);
+    border-radius: 6px;
+    font-size: 16px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+label, .group-title {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    color: rgb(60, 60, 70);
+}
+
+.group-title {
+    margin-top: 12px;
+}
+
+input[type="text"], input[type="password"], input[type="email"], input[type="tel"], input[type="date"], select, textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid rgb(190, 180, 210);
+    border-radius: 6px;
+    font-size: 14px;
+    box-sizing: border-box;
+    background-color: rgb(255, 255, 255);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: rgb(130, 80, 210);
+    outline: none;
+}
+
+.radio-checkbox-label {
+    display: inline-block;
+    margin-right: 15px;
+    margin-bottom: 8px;
+    font-weight: normal;
+    cursor: pointer;
+}
+
+.radio-checkbox-label input {
+    margin-right: 5px;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.be {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.2s;
+}
+
+.be-submit {
+    background-color: rgb(110, 65, 180);
+    color: rgb(255, 255, 255);
+}
+
+.be-submit:hover {
+    background-color: rgb(90, 45, 160);
+}
+
+.be-reset {
+    background-color: rgb(220, 220, 230);
+    color: rgb(60, 60, 70);
+}
+
+.be-reset:hover {
+    background-color: rgb(200, 200, 210);
+}
+
+.search-form {
+    display: flex;
+    gap: 10px;
+}
+
+.be-search {
+    background-color: rgb(140, 95, 210);
+    color: rgb(255, 255, 255);
+    white-space: nowrap;
+}
+
+.be-search:hover {
+    background-color: rgb(120, 75, 190);
+}

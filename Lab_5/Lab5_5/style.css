@@ -1,0 +1,110 @@
+body {
+    background-color: rgb(245, 243, 248);
+    color: rgb(40, 40, 50);
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: rgb(255, 255, 255);
+    padding: 25px;
+    border-radius: 10px;
+}
+
+h2 {
+    color: rgb(106, 27, 154);
+    margin-top: 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-color: rgb(220, 210, 235);
+    margin: 30px 0;
+}
+
+
+section:nth-of-type(1) > div {
+    width: 300px;
+    padding: 20px;
+    border: 5px solid rgb(138, 43, 226);
+    background-color: rgb(243, 229, 245);
+    display: inline-block;
+    margin: 20px;
+    vertical-align: top;
+}
+
+section:nth-of-type(1) > div:nth-of-type(1) {
+    box-sizing: content-box;
+}
+
+section:nth-of-type(1) > div:nth-of-type(2) {
+    box-sizing: border-box;
+}
+
+section:nth-of-type(2) > div {
+    max-height: 80px;
+    border: 2px solid rgb(123, 31, 162);
+    background-color: rgb(250, 245, 255);
+    padding: 10px;
+    margin-bottom: 20px;
+}
+
+section:nth-of-type(2) > div:nth-of-type(1) {
+    overflow: visible;
+}
+
+section:nth-of-type(2) > div:nth-of-type(2) {
+    overflow: hidden;
+}
+
+section:nth-of-type(2) > div:nth-of-type(3) {
+    overflow: scroll;
+}
+
+section:nth-of-type(2) > div:nth-of-type(4) {
+    overflow: auto;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 0;
+    background-color: rgb(106, 27, 154);
+    border-radius: 6px;
+}
+
+ul > li {
+    display: inline-block;
+}
+
+ul > li > a {
+    display: block;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+ul > li > a:hover {
+    background-color: rgb(138, 43, 226);
+}
+
+/* 
+   Пояснення про display: none:
+   
+   Властивість display: none повністю видаляє елемент з HTML-потоку сторінки.
+   Займане ним місце НЕ резервується, і наступні елементи зсуваються на його місце.
+
+   Відмінність від visibility: hidden:
+   При visibility: hidden елемент стає невидимим, але продовжує займати своє місце на сторінці.
+
+   Відмінність від opacity: 0:
+   При opacity: 0 елемент стає прозорим, зберігає свої розміри, займане місце та продовжує реагувати на кліки.
+*/
+
+ul > li:nth-child(4) {
+    display: none;
+}

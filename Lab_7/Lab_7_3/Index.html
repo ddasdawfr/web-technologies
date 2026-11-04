@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Lab7_6</title>
+	<link rel="stylesheet" href="style.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+	<div class="weather-card flex-column">
+		<!-- Поточна погода (Header) -->
+		<header class="current-weather flex-column">
+			<div class="location-info">
+				<h1 class="city">New York, NY</h1>
+				<p class="date">Tuesday, April 15th</p>
+				<p class="condition">Overcast</p>
+			</div>
+
+			<div class="weather-main flex-row">
+				<div class="temperature flex-row">
+					<img src="iconfinder_weather04.png" width="64" height="64">
+					<span class="temp-value">58</span>
+					<span class="temp-unit">°F</span>
+				</div>
+			<ul class="weather-details">
+				<li class="detail-item">
+					<span class="detail-label">Precipitation:</span>
+					<span class="detail-value">100%</span>
+				</li>
+				<li class="detail-item">
+					<span class="detail-label">Humidity:</span>
+					<span class="detail-value">97%</span>
+				</li>
+				<li class="detail-item">
+					<span class="detail-label">Wind:</span>
+					<span class="detail-value">4 mph SW</span>
+				</li>
+				<li class="detail-item">
+					<span class="detail-label">Pollen Count:</span>
+					<span class="detail-value">36</span>
+				</li>
+			</ul>
+			</div>
+		</header>
+
+		<!-- Прогноз погоди на n-днів (Main content) -->
+		<main class="forecast-section">
+			<div class="forecast-list flex-column">
+				<hr class="forecast-line">
+
+				<!-- Today -->
+				<article class="forecast-item flex-row">
+					<div class="day-info flex-row">
+						<span class="day-name">Today</span>
+						<img src="iconfinder_weather07.png" width="64" height="64">
+					</div>
+					<div class="forecast-data flex-row">
+						<div class="flex-row">
+							<div class="temp-range flex-column">
+								<span class="temp-high">68°</span>
+								<span class="temp-low">36°</span>
+							</div>
+						</div>
+						<span class="pollen-badge">Pollen 36</span>
+					</div>
+				</article>
+
+				<hr class="forecast-line">
+				
+				<!-- Wednesday -->
+				<article class="forecast-item flex-row">
+					<div class="day-info flex-row">
+						<span class="day-name">Wednesday</span>
+						<img src="iconfinder_weather01.png" width="64" height="64">
+					</div>
+					<div class="forecast-data flex-row">
+						<div class="temp-range flex-row">
+							<span class="temp-high">50°</span>
+							<span class="temp-low">39°</span>
+						</div>
+						<span class="pollen-badge">Pollen 36</span>
+					</div>
+				</article>
+
+				<hr class="forecast-line">
+
+				<!-- Thursday -->
+				<article class="forecast-item flex-row">
+					<div class="day-info flex-row">
+						<span class="day-name">Thursday</span>
+						<img src="iconfinder_weather01.png" width="64" height="64">
+					</div>
+					<div class="forecast-data flex-row">
+						<div class="temp-range flex-row">
+							<span class="temp-high">55°</span>
+							<span class="temp-low">39°</span>
+						</div>
+						<span class="pollen-badge">Pollen 36</span>
+					</div>
+				</article>
+
+				<hr class="forecast-line">
+
+				<!-- Friday -->
+				<article class="forecast-item flex-row">
+					<div class="day-info flex-row">
+						<span class="day-name">Friday</span>
+						<img src="iconfinder_weather02.png" width="64" height="64">
+					</div>
+					<div class="forecast-data flex-row">
+						<div class="temp-range flex-row">
+							<span class="temp-high">54°</span>
+							<span class="temp-low">43°</span>
+						</div>
+						<span class="pollen-badge">Pollen 36</span>
+					</div>
+				</article>
+
+				<hr class="forecast-line">
+
+				<!-- Saturday -->
+				<article class="forecast-item flex-row">
+					<div class="day-info flex-row">
+						<span class="day-name">Saturday</span>
+						<img src="iconfinder_weather06.png" width="64" height="64">
+					</div>
+					<div class="forecast-data flex-row">
+						<div class="temp-range flex-row">
+							<span class="temp-high">64°</span>
+							<span class="temp-low">46°</span>
+						</div>
+						<span class="pollen-badge">Pollen 36</span>
+					</div>
+				</article>
+
+				<hr class="forecast-line">
+
+				<!-- Sunday -->
+				<article class="forecast-item flex-row">
+					<div class="day-info flex-row">
+						<span class="day-name">Sunday</span>
+						<img src="iconfinder_weather06.png" width="64" height="64">
+					</div>
+					<div class="forecast-data flex-row">
+						<div class="temp-range flex-row">
+							<span class="temp-high">64°</span>
+							<span class="temp-low">50°</span>
+						</div>
+						<span class="pollen-badge">Pollen 36</span>
+					</div>
+				</article>
+
+				<hr class="forecast-line">
+
+				<!-- Monday -->
+				<article class="forecast-item flex-row">
+					<div class="day-info flex-row">
+						<span class="day-name">Monday</span>
+						<img src="iconfinder_weather03.png" width="64" height="64">
+					</div>
+					<div class="forecast-data flex-row">
+						<div class="temp-range flex-row">
+							<span class="temp-high">61°</span>
+							<span class="temp-low">50°</span>
+						</div>
+						<span class="pollen-badge">Pollen 36</span>
+					</div>
+				</article>
+
+				<hr class="forecast-line">
+
+			</div>
+		</main>
+	</div>
+
+</body>
+</html>
