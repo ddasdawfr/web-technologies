@@ -1,0 +1,123 @@
+/* ==========================================================================
+	 1. CSS RESET (Скидання стилів)
+	 ========================================================================== */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+img {
+	max-width: 100%;
+	display: block;
+}
+
+/* ==========================================================================
+	 2. CSS VARIABLES (Змінні CSS)
+	 ========================================================================== */
+:root {
+	--bg-color: #eef2f5;
+	--card-bg: #ffffff;
+	--text-color: #333333;
+	--gap-size: 14px;
+	--border-radius: 4px;
+	--box-shadow: 10px 10px 7px rgba(0, 0, 0, 0.50);
+	--main-max-width: 1100px;
+	--row-height: 145px;
+	--wide-row-height: 240px;
+}
+
+/* ==========================================================================
+	 3. BASE STYLES
+	 ========================================================================== */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	background-color: var(--bg-color);
+	color: var(--text-color);
+	padding: 24px 16px;
+}
+
+.gallery-container {
+	max-width: var(--main-max-width);
+	margin: 0 auto;
+}
+
+.gallery-title {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 1.75rem;
+}
+
+/* ==========================================================================
+	 4. GRID GALLERY (НЕПАРНИЙ ВАРІАНТ)
+	 5 колонок, 3 рядки
+	 ========================================================================== */
+.gallery {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: var(--row-height) var(--wide-row-height) var(--row-height);
+	gap: var(--gap-size);
+}
+
+.gallery__item {
+	overflow: hidden;
+	border-radius: var(--border-radius);
+	background-color: var(--card-bg);
+	box-shadow: var(--box-shadow);
+}
+
+/* Центральний панорамний елемент розтягується від 1-ї до останньої колонки */
+.gallery__item--wide {
+	grid-column: 1 / -1;
+}
+
+.gallery__img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	transition: transform 0.3s ease;
+}
+
+.gallery__img:hover {
+	transform: scale(1.03);
+}
+
+/* ==========================================================================
+	 5. MEDIA QUERIES (Адаптивність для 768px та 576px)
+	 ========================================================================== */
+
+/* Планшети (<= 768px) */
+@media (max-width: 768px) {
+	.gallery {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-rows: auto;
+		grid-auto-rows: 180px;
+	}
+
+	.gallery__item--wide {
+		grid-column: 1 / -1;
+		height: 220px;
+	}
+}
+
+/* Мобільні пристрої (<= 576px) */
+@media (max-width: 576px) {
+	.gallery {
+		grid-template-columns: 1fr;
+		grid-template-rows: auto;
+		grid-auto-rows: 200px;
+		gap: calc(var(--gap-size) * 0.75);
+	}
+
+	.gallery__item--wide {
+		grid-column: auto;
+		height: 180px;
+	}
+}

@@ -1,0 +1,167 @@
+/* ==========================================================================
+	 1. CSS RESET (Скидання стилів)
+	 ========================================================================== */
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+}
+
+/* ==========================================================================
+	 2. CSS VARIABLES (Змінні CSS)
+	 ========================================================================== */
+:root {
+	--bg-color: #f4f6f8;
+	--block-bg: #fbc02d;				/* Жовтий колір блоків як на зразку */
+	--block-hover: #f5b000;
+	--text-color: #ffffff;
+	--gap-size: 6px;
+	--main-max-width: 1000px;
+	--tree-min-height: 520px;
+}
+
+/* ==========================================================================
+	 3. BASE STYLES
+	 ========================================================================== */
+body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+	background-color: var(--bg-color);
+	padding: 24px 16px;
+}
+
+.tree-container {
+	max-width: var(--main-max-width);
+	margin: 0 auto;
+}
+
+.tree-title {
+	text-align: center;
+	margin-bottom: 20px;
+	font-size: 1.6rem;
+	color: #333333;
+}
+
+.tree {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	grid-auto-flow: column; /* <-- ДОДАЙ ЦЕЙ РЯДОК */
+	gap: var(--gap-size);
+	min-height: var(--tree-min-height);
+	counter-reset: block-counter;
+}
+
+/* ==========================================================================
+	 4. GRID TREE LAYOUT & GENERATED CONTENT (СІТКА ТА ЛІЧИЛЬНИК)
+	 Сітка з 6 колонок та 12 рядків (12 — НСКО для 1, 2, 3, 4, 6, 12)
+	 ========================================================================== */
+.tree {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-rows: repeat(12, 1fr);
+	gap: var(--gap-size);
+	min-height: var(--tree-min-height);
+	
+	/* Ініціалізація CSS-лічильника для нумерації блоків */
+	counter-reset: block-counter;
+}
+
+.tree__item {
+	background-color: var(--block-bg);
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+	padding-top: 6px;
+	transition: background-color 0.2s ease;
+}
+
+.tree__item:hover {
+	background-color: var(--block-hover);
+}
+
+/* Нумерація за допомогою генерованого вмісту (generated content) */
+.tree__item::before {
+	counter-increment: block-counter;
+	content: counter(block-counter);
+	color: var(--text-color);
+	font-weight: bold;
+	font-size: 0.85rem;
+	line-height: 1;
+}
+
+/* ==========================================================================
+	 5. ПОЗИЦІОНУВАННЯ ТА СПАНИ БЛОКІВ ПО КОЛОНКАХ
+	 ========================================================================== */
+
+/* Колонка 1: 1 блок на всі 12 рядків */
+.tree__item--col-1 {
+	grid-column: 1;
+	grid-row: span 12;
+}
+
+/* Колонка 2: 2 блоки по 6 рядків кожен */
+.tree__item--col-2 {
+	grid-column: 2;
+	grid-row: span 6;
+}
+
+/* Колонка 3: 3 блоки по 4 рядки кожен */
+.tree__item--col-3 {
+	grid-column: 3;
+	grid-row: span 4;
+}
+
+/* Колонка 4: 4 блоки по 3 рядки кожен */
+.tree__item--col-4 {
+	grid-column: 4;
+	grid-row: span 3;
+}
+
+/* Колонка 5: 6 блоків по 2 рядки кожен */
+.tree__item--col-5 {
+	grid-column: 5;
+	grid-row: span 2;
+}
+
+/* Колонка 6: 12 блоків по 1 рядку кожен */
+.tree__item--col-6 {
+	grid-column: 6;
+	grid-row: span 1;
+	padding-top: 2px;
+}
+
+/* ==========================================================================
+	 6. MEDIA QUERIES (Адаптивність)
+	 ========================================================================== */
+
+/* Планшети (<= 768px): забезпечуємо горизонтальне прокручування макету */
+@media (max-width: 768px) {
+	.tree-container {
+		overflow-x: auto;
+	}
+
+	.tree {
+		min-width: 650px;
+		min-height: 480px;
+	}
+}
+
+/* Мобільні (<= 576px) */
+@media (max-width: 576px) {
+	.tree {
+		min-width: 550px;
+		min-height: 440px;
+		gap: 4px;
+	}
+
+	.tree__item::before {
+		font-size: 0.75rem;
+	}
+}
